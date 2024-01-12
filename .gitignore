@@ -19,4 +19,6 @@
 *.log
 
 # secrets
-secrets.*.js
+secrets.*.js/.blackbox/pubring.gpg~
+/.blackbox/pubring.kbx~
+/.blackbox/secring.gpg
