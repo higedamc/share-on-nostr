@@ -1,7 +1,7 @@
 import { defineManifest } from '@crxjs/vite-plugin';
 
 export default defineManifest({
-  name: 'share-on-nostr',
+  name: 'share-on-nostr-safari',
   description: 'Share URL of active tab on Nostr',
   version: '0.3.1',
   manifest_version: 3,
@@ -26,7 +26,7 @@ export default defineManifest({
       matches: [],
     },
     {
-      resources: ['js/share-on-nostr.js'],
+      resources: ['js/share-on-nostr-safari.js'],
       matches: ['https://*/*', 'http://localhost:*/*'],
     },
   ],

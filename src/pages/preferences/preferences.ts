@@ -104,7 +104,7 @@ export async function preferences() {
             enableContextMenu: get(enableContextMenu),
           });
           const packet: Packet = {
-            ext: 'share-on-nostr',
+            ext: 'share-on-nostr-safari',
             kind: 'updatePreferences',
           };
           chrome.runtime.sendMessage(packet);
