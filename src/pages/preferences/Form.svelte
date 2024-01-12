@@ -50,17 +50,17 @@
   variant="outlined"
   style="display: block; width: 100%;"
 />
-<Button on:click={useDefaultNoteTemplate} variant="outlined" style="margin-top: 0.75em;">
-  <ButtonLabel>Use Default</ButtonLabel>
+<Button on:click={useDefaultNoteTemplate} variant="outlined" style="margin-top: 0.75em; background-color: purple;">
+  <ButtonLabel style="color: white;">Use Default</ButtonLabel>
 </Button>
 
-<h3>Post Method</h3>
+<!-- <h3>Post Method</h3>
 <RadioGrid>
   <Radio slot="radio" bind:group={$postMethod} value={NostrPostMethods.nip07} />
   <span slot="label"
     >Post with NIP-07. (Require another NIP-07 extension supporting getRelays().)</span
   >
-</RadioGrid>
+</RadioGrid> -->
 <RadioGrid>
   <Radio slot="radio" bind:group={$postMethod} value={NostrPostMethods.nsec} />
   <span slot="label">Post directly with this extension.</span>
@@ -115,7 +115,7 @@
   </FormField>
 </div>
 
-<Button style="width: 100%; margin-top: 2em;" variant="unelevated" on:click={tryToSave}>
+<Button style="width: 100%; margin-top: 2em; background-color: purple;" variant="unelevated" on:click={tryToSave}>
   <ButtonLabel>Save</ButtonLabel>
 </Button>
 
