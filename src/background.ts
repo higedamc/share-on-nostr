@@ -1,5 +1,5 @@
 chrome.runtime.onMessage.addListener((packet: Packet) => {
-  if (packet.ext !== 'share-on-nostr') {
+  if (packet.ext !== 'share-on-nostr-safari') {
     return;
   }
 
@@ -11,7 +11,7 @@ chrome.runtime.onMessage.addListener((packet: Packet) => {
   }
 });
 
-const contextMenuId = 'share-on-nostr';
+const contextMenuId = 'share-on-nostr-safari';
 
 async function resetContextMenu() {
   chrome.contextMenus.removeAll();

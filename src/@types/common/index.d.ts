@@ -1,4 +1,4 @@
-type ExtName = 'share-on-nostr';
+type ExtName = 'share-on-nostr-safari';
 
 type Packet = { ext: ExtName } & (
   | { kind: 'share'; tabId: number; text: string; url: string }

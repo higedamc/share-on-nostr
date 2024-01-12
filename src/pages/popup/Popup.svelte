@@ -63,7 +63,7 @@
   <Lazy promise={loading}>
     <Textfield
       textarea
-      input$maxlength={140}
+      input$maxlength={500}
       bind:value={note}
       disabled={sent}
       label="Share on Nostr"

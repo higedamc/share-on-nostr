@@ -1,7 +1,7 @@
 {
-  "name": "share-on-nostr",
+  "name": "share-on-nostr-safari",
   "version": "0.3.1",
-  "author": "penpenpng",
+  "author": "godzhigella",
   "description": "Share URL of active tab on Nostr",
   "type": "module",
   "license": "MIT",

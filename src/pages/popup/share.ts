@@ -24,7 +24,7 @@ export async function share(params: ShareParams) {
 
 async function shareByNip07({ tabId, text, url }: ShareParams) {
   const packet: Packet = {
-    ext: 'share-on-nostr',
+    ext: 'share-on-nostr-safari',
     kind: 'share',
     tabId,
     text,
@@ -84,7 +84,7 @@ export async function onReceivedRelays(callback: OnReceiveRelaysHandler) {
 
   if (postMethod === 'nip07') {
     chrome.runtime.onMessage.addListener((packet: Packet) => {
-      if (packet.ext !== 'share-on-nostr') {
+      if (packet.ext !== 'share-on-nostr-safari') {
         return;
       }
 
@@ -107,7 +107,7 @@ export async function onReceivedPostResult(callback: OnReceivedPostResultHandler
 
   if (postMethod === 'nip07') {
     chrome.runtime.onMessage.addListener((packet: Packet) => {
-      if (packet.ext !== 'share-on-nostr') {
+      if (packet.ext !== 'share-on-nostr-safari') {
         return;
       }
 

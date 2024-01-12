@@ -21,10 +21,10 @@ export async function connectToActiveTab(params: { inject: boolean }): Promise<{
         }
         window.__shareOnNostr__loaded = true;
 
-        injectResourceScript('js/share-on-nostr.js');
+        injectResourceScript('js/share-on-nostr-safari.js');
 
         window.addEventListener('message', async ({ data }: MessageEvent<Packet>) => {
-          if (data.ext !== 'share-on-nostr') {
+          if (data.ext !== 'share-on-nostr-safari') {
             return;
           }
 
@@ -33,7 +33,7 @@ export async function connectToActiveTab(params: { inject: boolean }): Promise<{
           }
         });
         chrome.runtime.onMessage.addListener((packet: Packet) => {
-          if (packet.ext !== 'share-on-nostr') {
+          if (packet.ext !== 'share-on-nostr-safari') {
             return;
           }
 
