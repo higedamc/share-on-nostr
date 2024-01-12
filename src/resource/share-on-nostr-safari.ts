@@ -1,5 +1,5 @@
 window.addEventListener('message', async ({ data }: MessageEvent<Packet>) => {
-  if (data.ext !== 'share-on-nostr') {
+  if (data.ext !== 'share-on-nostr-safari') {
     return;
   }
 
@@ -21,7 +21,7 @@ async function shareOnNostr(message: string, url: string) {
     .map(([url]) => url);
 
   const packet: Packet = {
-    ext: 'share-on-nostr',
+    ext: 'share-on-nostr-safari',
     kind: 'relays',
     relays: writableRelays,
   };
@@ -49,7 +49,7 @@ async function shareOnNostr(message: string, url: string) {
     });
     ws.addEventListener('error', () => {
       const packet: Packet = {
-        ext: 'share-on-nostr',
+        ext: 'share-on-nostr-safari',
         kind: 'result',
         url,
         success: false,
@@ -59,7 +59,7 @@ async function shareOnNostr(message: string, url: string) {
     ws.addEventListener('message', ({ data }) => {
       const [ok] = JSON.parse(data);
       const packet: Packet = {
-        ext: 'share-on-nostr',
+        ext: 'share-on-nostr-safari',
         kind: 'result',
         url,
         success: ok === 'OK',
