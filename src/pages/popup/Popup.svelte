@@ -1,6 +1,7 @@
 <script lang="ts">
   import Button, { Label as ButtonLabel } from '@smui/button';
   import Textfield from '@smui/textfield';
+  import CharacterCounter from '@smui/textfield/character-counter';
   import Lazy from '../../lib/Lazy.svelte';
   import { load } from '../../lib/store';
   import { connectToActiveTab } from './connection';
@@ -62,18 +63,21 @@
   <Lazy promise={loading}>
     <Textfield
       textarea
+      input$maxlength={140}
       bind:value={note}
       disabled={sent}
       label="Share on Nostr"
-      style="width: 100%; resize: vertical;"
+      style="width: 100%; resize: vertical; border: 0px; border-radius: 0px;"
       input$rows={7}
       input$autofocus
       on:keydown={onKeydown}
-    />
+    >
+    <CharacterCounter slot="internalCounter">0 500</CharacterCounter>
+  </Textfield>
     <Button
       variant="raised"
       disabled={sent || note.length <= 0}
-      style="margin-top: 5px; width: 100%;"
+      style="margin-top: 5px; width: 100%; background-color: purple;"
       on:click={shareOnNostr}
     >
       <ButtonLabel>{sent ? 'Sent' : 'Share'}</ButtonLabel>
